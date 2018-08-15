@@ -7,3 +7,5 @@
 !.idea/copyright/*.xml
 !.idea/scopes/*.xml
 
+# Local build files
+build
