@@ -1,0 +1,9 @@
+# Ignore rules for .git repos
+
+# Ignore JetBrains stuff
+.idea/**/*.xml
+*.iml
+# ... except for copyright settings
+!.idea/copyright/*.xml
+!.idea/scopes/*.xml
+
