@@ -12,4 +12,5 @@ $(BUILD_BIN):
 
 .PHONY: run
 run: $(BUILD_BIN)
+	$(BUILD_BIN) version
 	$(BUILD_BIN)
