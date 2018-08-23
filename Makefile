@@ -8,7 +8,7 @@ BUILD_BIN=$(BUILD_ROOT)/$(BIN_NAME)
 
 .PHONY: $(BUILD_BIN)
 $(BUILD_BIN):
-	$(GOBUILD) -o $(BUILD_BIN) -v ./...
+	$(GOBUILD) -v -o $(BUILD_BIN)
 
 .PHONY: run
 run: $(BUILD_BIN)
