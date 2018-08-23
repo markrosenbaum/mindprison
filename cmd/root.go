@@ -14,11 +14,32 @@
    limitations under the License
 =============================================================================*/
 
-package main
+package cmd
 
-import "./cmd"
+import (
+	"fmt"
+	"os"
 
-func main() {
+	"github.com/spf13/cobra"
+)
 
-	cmd.Execute()
+var rootCmd = &cobra.Command{
+	Use:   "mindprison",
+	Short: "MindPrison is a trap for suspicious traffic",
+	Long: `A multi-socket daemon that captures and analyzes suspicious traffic of various types or protocols
+           in an isolated, secure environment.`,
+	Run: func(cmd *cobra.Command, args []string) {
+		fmt.Printf("Starting root command")
+	},
+}
+
+func init() {
+	cobra.OnInitialize()
+}
+
+func Execute() {
+	if err := rootCmd.Execute(); err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
 }

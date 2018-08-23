@@ -14,11 +14,23 @@
    limitations under the License
 =============================================================================*/
 
-package main
+package cmd
 
-import "./cmd"
+import (
+	"fmt"
 
-func main() {
+	"github.com/spf13/cobra"
+)
 
-	cmd.Execute()
+func init() {
+	rootCmd.AddCommand(versionCmd)
+}
+
+var versionCmd = &cobra.Command{
+	Use:   "version",
+	Short: "Report the version",
+	Long:  "Print out the version identifier",
+	Run: func(cmd *cobra.Command, args []string) {
+		fmt.Printf("Version: 0.1\n")
+	},
 }
